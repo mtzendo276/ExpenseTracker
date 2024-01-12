@@ -19,6 +19,8 @@
 		792727202B50BB2400C3AA33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7927271F2B50BB2400C3AA33 /* Constants.swift */; };
 		792727222B50CEC400C3AA33 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792727212B50CEC400C3AA33 /* Tab.swift */; };
 		792727242B50D52700C3AA33 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792727232B50D52700C3AA33 /* Category.swift */; };
+		792727262B5145D700C3AA33 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792727252B5145D700C3AA33 /* Transaction.swift */; };
+		792727282B5147B300C3AA33 /* TintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792727272B5147B300C3AA33 /* TintColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		7927271F2B50BB2400C3AA33 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		792727212B50CEC400C3AA33 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		792727232B50D52700C3AA33 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		792727252B5145D700C3AA33 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		792727272B5147B300C3AA33 /* TintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 			children = (
 				792727212B50CEC400C3AA33 /* Tab.swift */,
 				792727232B50D52700C3AA33 /* Category.swift */,
+				792727252B5145D700C3AA33 /* Transaction.swift */,
+				792727272B5147B300C3AA33 /* TintColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,10 +304,12 @@
 			files = (
 				792727202B50BB2400C3AA33 /* Constants.swift in Sources */,
 				7927271D2B4FEFB600C3AA33 /* IntroScreen.swift in Sources */,
+				792727262B5145D700C3AA33 /* Transaction.swift in Sources */,
 				791880342B492C6E0070D32B /* ContentView.swift in Sources */,
 				792727222B50CEC400C3AA33 /* Tab.swift in Sources */,
 				791880362B492C6E0070D32B /* Item.swift in Sources */,
 				791880322B492C6E0070D32B /* ExpenseTrackerApp.swift in Sources */,
+				792727282B5147B300C3AA33 /* TintColor.swift in Sources */,
 				792727242B50D52700C3AA33 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
