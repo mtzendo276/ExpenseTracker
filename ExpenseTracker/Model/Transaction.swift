@@ -5,7 +5,7 @@
 //  Created by Chen Yue on 12/01/24.
 //
 
-import Foundation
+import SwiftUI
 
 struct Transaction: Identifiable {
     
@@ -14,18 +14,27 @@ struct Transaction: Identifiable {
     var title: String
     var remarks: String
     var amount: Double
-    var deteAdded: Date
+    var dateAdded: Date
     var category: String
     var tintColor: String
     
-    init(title: String, remarks: String, amount: Double, deteAdded: Date, category: Category, tintColor: String) {
+    var color: Color { tints.first(where: { $0.color == tintColor})?.value ?? appTint }
+    
+    init(title: String, remarks: String, amount: Double, dateAdded: Date, category: Category, tintColor: TintColor) {
         self.title = title
         self.remarks = remarks
         self.amount = amount
-        self.deteAdded = deteAdded
+        self.dateAdded = dateAdded
         self.category = category.rawValue
-        self.tintColor = tintColor
+        self.tintColor = tintColor.color
     }
     
-    
 }
+
+var sampleTransactions: [Transaction] = [
+    .init(title: "Magic keyboad", remarks: "Apple Product", amount: 129, dateAdded: .now, category: .expense, tintColor: tints.randomElement()!),
+    .init(title: "Apple Music", remarks: "Subscription", amount: 10.99, dateAdded: .now, category: .expense, tintColor: tints.randomElement()!),
+    .init(title: "iCloud+", remarks: "Subscription", amount: 0.99, dateAdded: .now, category: .expense, tintColor: tints.randomElement()!),
+    .init(title: "Payment", remarks: "Payment Received!", amount: 2499, dateAdded: .now, category: .income, tintColor: tints.randomElement()!),
+    
+]
