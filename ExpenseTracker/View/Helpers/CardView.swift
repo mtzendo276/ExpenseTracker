@@ -61,5 +61,8 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView(income: 4590, expense: 2389)
+    VStack {
+        CardView(income: 4590, expense: 2389)
+    }
+    .background(Color.gray)
 }

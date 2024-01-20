@@ -13,6 +13,11 @@ struct ContentView: View {
     @Query private var items: [Item]
     
     @AppStorage("isFirstTime") private var isFirstTime: Bool = true
+    
+    //app lock
+    @AppStorage("isAppLockEnabled") private var isAppLockEnabled: Bool = false
+    @AppStorage("lockWhenAppGoesBackground") private var lockWhenAppGoesBackground: Bool = false
+    
     @State private var activeTab: Tab = .recents
 
     var body: some View {
@@ -40,25 +45,27 @@ struct ContentView: View {
 //        } detail: {
 //            Text("Select an item")
 //        }
-        TabView(selection: $activeTab) {
-            Recents()
-                .tag(Tab.recents)
-                .tabItem { Tab.recents.tabContent }
-            Search()
-                .tag(Tab.search)
-                .tabItem { Tab.search.tabContent }
-            Graphs()
-                .tag(Tab.charts)
-                .tabItem { Tab.charts.tabContent }
-            Settings()
-                .tag(Tab.settings)
-                .tabItem { Tab.settings.tabContent }
+        LockView(lockType: .both, lockPin: "1234", isEnable: isAppLockEnabled) {
+            TabView(selection: $activeTab) {
+                Recents()
+                    .tag(Tab.recents)
+                    .tabItem { Tab.recents.tabContent }
+                Search()
+                    .tag(Tab.search)
+                    .tabItem { Tab.search.tabContent }
+                Graphs()
+                    .tag(Tab.charts)
+                    .tabItem { Tab.charts.tabContent }
+                Settings()
+                    .tag(Tab.settings)
+                    .tabItem { Tab.settings.tabContent }
+            }
+            .tint(appTint)
+            .sheet(isPresented: $isFirstTime, content: {
+                IntroScreen()
+                    .interactiveDismissDisabled()
+            })
         }
-        .tint(appTint)
-        .sheet(isPresented: $isFirstTime, content: {
-            IntroScreen()
-                .interactiveDismissDisabled()
-        })
     }
 
     private func addItem() {

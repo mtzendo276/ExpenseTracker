@@ -31,6 +31,7 @@
 		792727382B522C3700C3AA33 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792727372B522C3700C3AA33 /* CardView.swift */; };
 		7927273A2B523BC900C3AA33 /* TransactionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792727392B523BC900C3AA33 /* TransactionCardView.swift */; };
 		7927273C2B52444100C3AA33 /* DateFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7927273B2B52444100C3AA33 /* DateFilterView.swift */; };
+		792ACA852B5B69740009D76A /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792ACA842B5B69740009D76A /* LockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		792727372B522C3700C3AA33 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		792727392B523BC900C3AA33 /* TransactionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardView.swift; sourceTree = "<group>"; };
 		7927273B2B52444100C3AA33 /* DateFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterView.swift; sourceTree = "<group>"; };
+		792ACA842B5B69740009D76A /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				792727392B523BC900C3AA33 /* TransactionCardView.swift */,
 				7927273B2B52444100C3AA33 /* DateFilterView.swift */,
 				791A55552B5A688F00E3B970 /* SwipeActionView.swift */,
+				792ACA842B5B69740009D76A /* LockView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				7927272B2B52177000C3AA33 /* Recents.swift in Sources */,
 				792727352B52257600C3AA33 /* Date+Extensions.swift in Sources */,
 				792727222B50CEC400C3AA33 /* Tab.swift in Sources */,
+				792ACA852B5B69740009D76A /* LockView.swift in Sources */,
 				791880362B492C6E0070D32B /* Item.swift in Sources */,
 				792727332B52199A00C3AA33 /* View+Extensions.swift in Sources */,
 				791880322B492C6E0070D32B /* ExpenseTrackerApp.swift in Sources */,
@@ -533,6 +537,7 @@
 				DEVELOPMENT_TEAM = G639TCDRRY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "\"Face ID\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -562,6 +567,7 @@
 				DEVELOPMENT_TEAM = G639TCDRRY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "\"Face ID\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
