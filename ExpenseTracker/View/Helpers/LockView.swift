@@ -197,6 +197,7 @@ struct LockView<Content: View>: View {
                             isUnlocked = true
                         } completion: {
                             pin = ""
+                            noBiometricAccess = !isBiometricAvailable
                         }
                     } else {
                         pin = ""
