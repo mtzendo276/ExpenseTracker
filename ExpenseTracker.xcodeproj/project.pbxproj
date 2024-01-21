@@ -32,6 +32,7 @@
 		7927273A2B523BC900C3AA33 /* TransactionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792727392B523BC900C3AA33 /* TransactionCardView.swift */; };
 		7927273C2B52444100C3AA33 /* DateFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7927273B2B52444100C3AA33 /* DateFilterView.swift */; };
 		792ACA852B5B69740009D76A /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792ACA842B5B69740009D76A /* LockView.swift */; };
+		792ACA872B5CCDE90009D76A /* NewExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792ACA862B5CCDE90009D76A /* NewExpenseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		792727392B523BC900C3AA33 /* TransactionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardView.swift; sourceTree = "<group>"; };
 		7927273B2B52444100C3AA33 /* DateFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterView.swift; sourceTree = "<group>"; };
 		792ACA842B5B69740009D76A /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		792ACA862B5CCDE90009D76A /* NewExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				792727362B522C2800C3AA33 /* Helpers */,
 				792727292B52175100C3AA33 /* TabViews */,
 				7927271C2B4FEFB600C3AA33 /* IntroScreen.swift */,
+				792ACA862B5CCDE90009D76A /* NewExpenseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			files = (
 				791A55562B5A688F00E3B970 /* SwipeActionView.swift in Sources */,
 				7927272F2B52178400C3AA33 /* Graphs.swift in Sources */,
+				792ACA872B5CCDE90009D76A /* NewExpenseView.swift in Sources */,
 				7927272D2B52177700C3AA33 /* Search.swift in Sources */,
 				7927273C2B52444100C3AA33 /* DateFilterView.swift in Sources */,
 				792727312B52178E00C3AA33 /* Settings.swift in Sources */,
