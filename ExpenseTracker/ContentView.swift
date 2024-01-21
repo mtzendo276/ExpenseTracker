@@ -45,7 +45,7 @@ struct ContentView: View {
 //        } detail: {
 //            Text("Select an item")
 //        }
-        LockView(lockType: .both, lockPin: "1234", isEnable: isAppLockEnabled) {
+        LockView(lockType: .both, lockPin: "1234", isEnable: isAppLockEnabled, lockWhenAppGoesBackground: lockWhenAppGoesBackground) {
             TabView(selection: $activeTab) {
                 Recents()
                     .tag(Tab.recents)
