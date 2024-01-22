@@ -9,6 +9,9 @@ import SwiftUI
 
 struct NewExpenseView: View {
     
+    @Environment(\.modelContext) private var context
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var title: String = ""
     @State private var remarks: String = ""
     @State private var amount: Double = .zero
@@ -75,7 +78,14 @@ struct NewExpenseView: View {
     }
     
     func save() {
-        
+        let transaction = Transaction(title: title,
+                                      remarks: remarks,
+                                      amount: amount,
+                                      dateAdded: dateAdded,
+                                      category: category,
+                                      tintColor: tint)
+        context.insert(transaction)
+        dismiss()
     }
     
     @ViewBuilder

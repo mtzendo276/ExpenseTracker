@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		791880322B492C6E0070D32B /* ExpenseTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791880312B492C6E0070D32B /* ExpenseTrackerApp.swift */; };
 		791880342B492C6E0070D32B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791880332B492C6E0070D32B /* ContentView.swift */; };
-		791880362B492C6E0070D32B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791880352B492C6E0070D32B /* Item.swift */; };
 		791880382B492C6F0070D32B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791880372B492C6F0070D32B /* Assets.xcassets */; };
 		7918803B2B492C6F0070D32B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7918803A2B492C6F0070D32B /* Preview Assets.xcassets */; };
 		791880452B492C6F0070D32B /* ExpenseTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791880442B492C6F0070D32B /* ExpenseTrackerTests.swift */; };
@@ -56,7 +55,6 @@
 		7918802E2B492C6E0070D32B /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		791880312B492C6E0070D32B /* ExpenseTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerApp.swift; sourceTree = "<group>"; };
 		791880332B492C6E0070D32B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		791880352B492C6E0070D32B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		791880372B492C6F0070D32B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7918803A2B492C6F0070D32B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		791880402B492C6F0070D32B /* ExpenseTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpenseTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +132,6 @@
 			children = (
 				791880312B492C6E0070D32B /* ExpenseTrackerApp.swift */,
 				791880332B492C6E0070D32B /* ContentView.swift */,
-				791880352B492C6E0070D32B /* Item.swift */,
 				7927271E2B50BB0F00C3AA33 /* Helpers */,
 				7927271B2B4FEF3100C3AA33 /* Model */,
 				7927271A2B4FEF2500C3AA33 /* View */,
@@ -369,7 +366,6 @@
 				792727352B52257600C3AA33 /* Date+Extensions.swift in Sources */,
 				792727222B50CEC400C3AA33 /* Tab.swift in Sources */,
 				792ACA852B5B69740009D76A /* LockView.swift in Sources */,
-				791880362B492C6E0070D32B /* Item.swift in Sources */,
 				792727332B52199A00C3AA33 /* View+Extensions.swift in Sources */,
 				791880322B492C6E0070D32B /* ExpenseTrackerApp.swift in Sources */,
 				792727282B5147B300C3AA33 /* TintColor.swift in Sources */,

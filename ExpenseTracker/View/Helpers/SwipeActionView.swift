@@ -172,5 +172,5 @@ struct ActionBuilder {
 #Preview {
 //    TransactionCardView(transcation: sampleTransactions[0])
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Transaction.self, inMemory: true)
 }
