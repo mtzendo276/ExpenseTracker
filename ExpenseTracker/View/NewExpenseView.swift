@@ -11,6 +11,7 @@ struct NewExpenseView: View {
     
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
+    var editTransaction: Transaction?
     
     @State private var title: String = ""
     @State private var remarks: String = ""
@@ -18,7 +19,7 @@ struct NewExpenseView: View {
     @State private var dateAdded: Date = .now
     @State private var category: Category = .expense
     
-    var tint: TintColor = tints.randomElement()!
+    @State var tint: TintColor = tints.randomElement()!
     
     var body: some View {
         ScrollView(.vertical) {
@@ -75,6 +76,19 @@ struct NewExpenseView: View {
                 Button("Save", action: save)
             }
         })
+        .onAppear {
+            guard let transcation = editTransaction else { return }
+            title = transcation.title
+            remarks = transcation.remarks
+            dateAdded = transcation.dateAdded
+            if let category = transcation.rawCategory {
+                self.category = category
+            }
+            amount = transcation.amount
+            if let tint = transcation.tint {
+                self.tint = tint
+            }
+        }
     }
     
     func save() {

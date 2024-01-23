@@ -19,6 +19,8 @@ class Transaction {
     var tintColor: String
     
     var color: Color { tints.first(where: { $0.color == tintColor})?.value ?? appTint }
+    var tint: TintColor? { tints.first(where: {$0.color == tintColor }) }
+    var rawCategory: Category? { Category.allCases.first(where: { category == $0.rawValue }) }
     
     init(title: String, remarks: String, amount: Double, dateAdded: Date, category: Category, tintColor: TintColor) {
         self.title = title
