@@ -41,12 +41,6 @@ struct Recents: View {
                             
                             CustomSegmentedControll()
                                 .padding(.bottom, 10)
-                            
-//                            TransactionCardView(transcation: transaction)
-                            
-//                            ForEach(sampleTransactions.filter({ $0.category == selectedCategory.rawValue })) { transaction in
-//                                TransactionCardView(transcation: transaction)
-//                            }
                             ForEach(transactions) {
                                 TransactionCardView(transcation: $0)
                             }
