@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TransactionCardView: View {
     
+    @Environment(\.modelContext) private var context
+    
     var transcation: Transaction
     var body: some View {
         SwipeActionView(cornerRadius: 15, direction: .trailing) {
@@ -38,17 +40,10 @@ struct TransactionCardView: View {
             .padding(.vertical, 10)
             .background(.background, in: .rect(cornerRadius: 10))
         } actions: {
-            Action(tint: .blue, icon: "star.fill") {
-                debugPrint("boolmarded")
-            }
             Action(tint: .red, icon: "trash.fill") {
-                withAnimation(.easeInOut) {
-                    
-                }
+                context.delete(transcation)
             }
         }
-
-        
     }
     
 }
