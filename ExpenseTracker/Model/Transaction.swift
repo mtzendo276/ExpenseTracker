@@ -18,10 +18,6 @@ class Transaction {
     var category: String
     var tintColor: String
     
-    var color: Color { tints.first(where: { $0.color == tintColor})?.value ?? appTint }
-    var tint: TintColor? { tints.first(where: {$0.color == tintColor }) }
-    var rawCategory: Category? { Category.allCases.first(where: { category == $0.rawValue }) }
-    
     init(title: String, remarks: String, amount: Double, dateAdded: Date, category: Category, tintColor: TintColor) {
         self.title = title
         self.remarks = remarks
@@ -31,12 +27,19 @@ class Transaction {
         self.tintColor = tintColor.color
     }
     
+    @Transient
+    var color: Color {
+        tints.first(where: { $0.color == tintColor})?.value ?? appTint
+    }
+    
+    @Transient
+    var tint: TintColor? {
+        tints.first(where: {$0.color == tintColor })
+    }
+    
+    @Transient
+    var rawCategory: Category? {
+        Category.allCases.first(where: { category == $0.rawValue })
+    }
+    
 }
-
-//var sampleTransactions: [Transaction] = [
-//    .init(title: "Magic keyboad", remarks: "Apple Product", amount: 129, dateAdded: .now, category: .expense, tintColor: tints.randomElement()!),
-//    .init(title: "Apple Music", remarks: "Subscription", amount: 10.99, dateAdded: .now, category: .expense, tintColor: tints.randomElement()!),
-//    .init(title: "iCloud+", remarks: "Subscription", amount: 0.99, dateAdded: .now, category: .expense, tintColor: tints.randomElement()!),
-//    .init(title: "Payment", remarks: "Payment Received!", amount: 2499, dateAdded: .now, category: .income, tintColor: tints.randomElement()!),
-//    
-//]
