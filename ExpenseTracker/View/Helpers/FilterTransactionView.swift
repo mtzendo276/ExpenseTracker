@@ -18,7 +18,7 @@ struct FilterTransactionView<Content: View>: View {
         let rawValue = category?.rawValue ?? ""
         let predicate = #Predicate<Transaction> { transaction in
             return (transaction.title.localizedStandardContains(searchText) ||
-                transaction.remarks.localizedStandardContains(searchText))
+                    transaction.remarks.localizedStandardContains(searchText)) && (rawValue.isEmpty ? true : transaction.category == rawValue)
         }
         _transactions = Query(filter: predicate, sort: [SortDescriptor(\Transaction.dateAdded, order: .reverse)], animation: .snappy)
         self.content = content
