@@ -18,7 +18,7 @@ struct Recents: View {
     
     @Namespace private var animation
     
-    @Query(sort: [SortDescriptor(\Transaction.dateAdded, order: .reverse)], animation: .snappy) private var transactions: [Transaction]
+//    @Query(sort: [SortDescriptor(\Transaction.dateAdded, order: .reverse)], animation: .snappy) private var transactions: [Transaction]
     
     var body: some View {
         GeometryReader {
@@ -37,17 +37,17 @@ struct Recents: View {
                             })
                             .hSpacing(.leading)
                             
-                            CardView(income: 2039, expense: 4098)
-                            
-                            CustomSegmentedControll()
-                                .padding(.bottom, 10)
-                            ForEach(transactions) { transaction in
-                                NavigationLink {
-                                    TransactionView(editTransaction: transaction)
-                                } label: {
-                                    TransactionCardView(transcation: transaction)
+                            FilterTransactionView(startDate: startDate, endDate: endDate) { transactions in
+                                CardView(income: total(transactions, category: .income),
+                                         expense: total(transactions, category: .expense))
+                                CustomSegmentedControll()
+                                    .padding(.bottom, 10)
+                                ForEach(transactions.filter({ $0.category == selectedCategory.rawValue })) { transaction in
+                                    NavigationLink(value: transaction) {
+                                        TransactionCardView(transcation: transaction)
+                                    }
+                                    .buttonStyle(.plain)
                                 }
-                                .buttonStyle(.plain)
                             }
                         } header: {
                             HeaderView(size)
@@ -58,6 +58,9 @@ struct Recents: View {
                 .background(.gray.opacity(0.15))
                 .blur(radius: showFilterView ? 8 : 0)
                 .disabled(showFilterView)
+                .navigationDestination(for: Transaction.self) { transaction in
+                    TransactionView(editTransaction: transaction)
+                }
             }//NavigationStack
             .overlay {
                 if showFilterView {
