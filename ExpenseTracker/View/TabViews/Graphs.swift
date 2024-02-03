@@ -18,9 +18,23 @@ struct Graphs: View {
             ScrollView(.vertical) {
                 LazyVStack(spacing: 10) {
                     ChartView()
-                        .padding(10)
                         .frame(height: 200)
+                        .padding(10)
+                        .padding(.top, 10)
                         .background(.background, in: .rect(cornerRadius: 10))
+                    ForEach(chartGroups) { group in
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text(format(date: group.date, format: "MMM yy"))
+                                .font(.caption)
+                                .foregroundStyle(.gray)
+                                .hSpacing(.leading)
+                            NavigationLink {
+                                ListOfExpenses(month: group.date)
+                            } label: {
+                                CardView(income: group.totalIncome, expense: group.totalExpense)
+                            }
+                        }
+                    }
                 }
                 .padding(15)
             }
@@ -47,6 +61,18 @@ struct Graphs: View {
             }
         }
         .chartScrollableAxes(.horizontal)
+        .chartXVisibleDomain(length: 4)
+        .chartLegend(position: .bottom, alignment: .trailing)
+        .chartYAxis {
+            AxisMarks(position: .leading) { value in
+                let doubleValue = value.as(Double.self) ?? 0
+                AxisGridLine()
+                AxisTick()
+                AxisValueLabel {
+                    Text(axisLable(doubleValue))
+                }
+            }
+        }
         .chartForegroundStyleScale(range: [Color.green.gradient, Color.red.gradient])
     }
     
@@ -84,6 +110,43 @@ struct Graphs: View {
         }
     }
     
+    func axisLable(_ value: Double) -> String {
+        let intValue = Int(value)
+        let kValue = Int(value) / 1000
+        return intValue < 1000 ? "\(intValue)" : "\(kValue)K"
+    }
+    
+}
+
+struct ListOfExpenses: View {
+    
+    let month: Date
+    var body: some View {
+        ScrollView(.vertical) {
+            LazyVStack(spacing: 15) {
+                Section {
+                    FilterTransactionView(startDate: month.startOfMonth, endDate: month.endOfMonth) { transactions in
+                        ForEach(transactions) { transaction in
+                            NavigationLink(value: transaction) {
+                                TransactionCardView(transcation: transaction)
+                            }
+                        }
+                    }
+                } header: {
+                    Text("Income")
+                        .font(.caption)
+                        .foregroundStyle(.gray)
+                        .hSpacing(.leading)
+                }
+            }
+            .padding(15)
+        }
+        .background(.gray.opacity(0.15))
+        .navigationTitle(format(date: month, format: "MMM yy"))
+        .navigationDestination(for: Transaction.self) { transaction in
+            TransactionView(editTransaction: transaction)
+        }
+    }
 }
 
 #Preview {
